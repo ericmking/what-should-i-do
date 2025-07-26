@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>What Should I Do?</title>
+      <script>
+        const ideas = [
+          'clean your room',
+          'video games',
+          'pet Tama',
+          'read a book',
+          'clean something else',
+          'play drums',
+          'play Nintendo',
+        ];
+
+        function whatNext() {
+          const i = Math.floor(Math.random() * ideas.length);
+          const idea = ideas[i];
+          const element = document.getElementById("idea")
+          element.innerHTML = idea;
+          element.className = '';
+
+        }
+      </script>
+
+      <style>
+        html, body {
+          height: 100%;
+          margin: 0; /* Remove default browser margin */
+          padding: 0; /* Remove default browser padding */
+          font-family: 'Brush Script MT', cursive;
+        }
+
+        h1 {
+          font-size: 100pt;
+          line-height: 25pt;
+
+        }
+
+        button {
+          font-family: 'Brush Script MT', cursive;
+          background-color: green;
+          color: pink;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* Centers horizontally */
+          align-items: center; /* Centers vertically */
+          height: 100vh; /* Example: make parent fill viewport height */
+          color: pink;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button onclick="whatNext()">
+          <h1>What should I do?</h1>
+        </button>
+      </div>
+      <div>
+        <h1 id="idea">&nbsp;</h1>
+      </div>
+    </div>
+  </body>
+</html>
